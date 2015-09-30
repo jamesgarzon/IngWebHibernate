@@ -7,6 +7,7 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 
 import co.edu.udea.iw.dao.ClienteDao;
 import co.edu.udea.iw.dao.HibernateSessionFactory;
@@ -41,8 +42,24 @@ public class ClienteDaoImp implements ClienteDao {
 
 	@Override
 	public Cliente obtener(String cedula) throws MyException {
-		// TODO Auto-generated method stub
-		return null;
+		Cliente rol = new Cliente();
+		Session session= null;
+		try {
+			session = HibernateSessionFactory.getInstance().getSession();
+			Criteria criteria = session.createCriteria(Cliente.class).add(Restrictions.eq("Cedula", cedula));
+			rol = (Cliente) session.get(Cliente.class, cedula); //Si no encuentra el código, retorna un objeto nulo
+		} catch (Exception e) {
+			throw new MyException(e);
+		}finally{
+			if (session!=null) {
+				try {
+					session.close();
+				} catch (HibernateException e) {
+					throw new MyException(e);
+				}
+			}
+		}
+		return rol;
 	}
 
 	@Override

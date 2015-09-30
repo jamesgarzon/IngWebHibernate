@@ -17,8 +17,8 @@
         <property name="contrasena" type="java.lang.String">
             <column name="CONTRASENA" length="125" not-null="true"/>
         </property>
-<!--         El false es para que no sea perezoso -->
-        <many-to-one name="rol" class="co.edu.udea.iw.dto.Rol" lazy="false"> 
+<!--         El lazy="false" es para que no sea perezoso -->
+        <many-to-one name="rol" class="co.edu.udea.iw.dto.Rol" fetch="join"> 
         	<column name="ROL" length="12" not-null="true"/>	
         </many-to-one>
     </class>
