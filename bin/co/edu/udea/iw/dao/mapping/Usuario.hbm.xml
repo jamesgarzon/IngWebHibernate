@@ -17,8 +17,9 @@
         <property name="contrasena" type="java.lang.String">
             <column name="CONTRASENA" length="125" not-null="true"/>
         </property>
-        <many-to-one name="rol" class="co.edu.udea.iw.dto.Rol">
-        	<column name="ROL" length="12" not-null="true"/>
+<!--         El false es para que no sea perezoso -->
+        <many-to-one name="rol" class="co.edu.udea.iw.dto.Rol" lazy="false"> 
+        	<column name="ROL" length="12" not-null="true"/>	
         </many-to-one>
     </class>
 </hibernate-mapping>

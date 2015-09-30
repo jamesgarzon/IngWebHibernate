@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 30/09/2015 04:38:08 PM by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="co.edu.udea.iw.dto.Cliente" table="CLIENTE">
+    <class name="co.edu.udea.iw.dto.Cliente" table="clientes">
         <id name="cedula" type="java.lang.String">
             <column name="CEDULA" length="15" not-null="true"/>
             <generator class="assigned" />
@@ -48,5 +48,6 @@
         <property name="fechaEliminacion" type="java.util.Date">
             <column name="FECHAELIMINACION" />
         </property>
+        
     </class>
 </hibernate-mapping>

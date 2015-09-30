@@ -13,5 +13,6 @@
         <mapping resource="co/edu/udea/iw/dao/mapping/Ciudad.hbm.xml" />
         <mapping resource="co/edu/udea/iw/dao/mapping/Rol.hbm.xml" />
         <mapping resource="co/edu/udea/iw/dao/mapping/Usuario.hbm.xml" />
+        <mapping resource="co/edu/udea/iw/dao/mapping/Cliente.hbm.xml" />
     </session-factory>
 </hibernate-configuration>

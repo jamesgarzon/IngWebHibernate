@@ -16,7 +16,7 @@ import co.edu.udea.iw.exception.MyException;
 
 public class UsuarioDaoImplTest {
 
-//	@Test
+	@Test
 	public void testObtener() {
 		UsuarioDaoImp dao= null;
         List<Usuario> lista = null;
@@ -27,7 +27,9 @@ public class UsuarioDaoImplTest {
             dao = new UsuarioDaoImp();
             lista = dao.obtener();
             // Assert
-           
+           for(Usuario usuario: lista){
+        	   System.out.println("Nombre: "+ usuario.getNombres() +" Rol: "+ usuario.getRol().getNombre());
+           }
             assertTrue(total <= lista.size());
         } catch (MyException e) {
             fail(e.getMessage());
@@ -105,7 +107,7 @@ public class UsuarioDaoImplTest {
         }
 	}
 
-	@Test
+//	@Test
 	public void testEliminar() {
 		UsuarioDaoImp dao= null;
         Usuario usuario = null;

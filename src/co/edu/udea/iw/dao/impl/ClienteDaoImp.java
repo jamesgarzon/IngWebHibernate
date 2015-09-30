@@ -6,6 +6,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import co.edu.udea.iw.dao.ClienteDao;
 import co.edu.udea.iw.dao.HibernateSessionFactory;
@@ -46,8 +47,23 @@ public class ClienteDaoImp implements ClienteDao {
 
 	@Override
 	public void guardar(Cliente Cliente) throws MyException {
-		// TODO Auto-generated method stub
-
+		Session session = null;
+		try {
+			session = HibernateSessionFactory.getInstance().getSession();
+			Transaction tx = session.beginTransaction();
+			session.save(Cliente);
+			tx.commit();
+		} catch (Exception e) {
+			throw new MyException(e);
+		}finally{
+			if (session!=null) {
+				try {
+					session.close();
+				} catch (HibernateException e) {
+					throw new MyException(e);
+				}
+			}
+		}
 	}
 
 	@Override
