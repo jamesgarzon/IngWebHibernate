@@ -85,14 +85,45 @@ public class ClienteDaoImp implements ClienteDao {
 
 	@Override
 	public void actualizar(Cliente Cliente) throws MyException {
-		// TODO Auto-generated method stub
+		Session session = null;
+		try {
+			session = HibernateSessionFactory.getInstance().getSession();
+			Transaction tx = session.beginTransaction();
+			session.update(Cliente);
+			tx.commit();
+		} catch (Exception e) {
+			throw new MyException(e);
+		}finally{
+			if (session!=null) {
+				try {
+					session.close();
+				} catch (HibernateException e) {
+					throw new MyException(e);
+				}
+			}
+		}
 
 	}
 
 	@Override
 	public void eliminar(Cliente Cliente) throws MyException {
-		// TODO Auto-generated method stub
-
+		Session session = null;
+		try {
+			session = HibernateSessionFactory.getInstance().getSession();
+			Transaction tx = session.beginTransaction();
+			session.delete(Cliente);
+			tx.commit();
+		} catch (Exception e) {
+			throw new MyException(e);
+		}finally{
+			if (session!=null) {
+				try {
+					session.close();
+				} catch (HibernateException e) {
+					throw new MyException(e);
+				}
+			}
+		}
 	}
 
 }

@@ -91,7 +91,7 @@ public class UsuarioDaoImplTest {
             // Act
             dao = new UsuarioDaoImp();
             rolDao = new RolDaoImp();
-            rol = rolDao.obtener("90");
+            rol = rolDao.obtener("ADM");
             usuario = new Usuario();
             usuario.setLogin("James");
             usuario.setNombres("James Danilo");

@@ -3,20 +3,17 @@ package co.edu.udea.iw.dao.impl;
 import static org.junit.Assert.*;
 
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 
 import org.junit.Test;
-
 import co.edu.udea.iw.dto.Cliente;
 import co.edu.udea.iw.dto.Usuario;
 import co.edu.udea.iw.exception.MyException;
-
 public class ClienteDaoImplTest {
 
-//	@Test
-	 public void testObtenerClientes() {
-	 	ClienteDaoImp dao= null;
+	@Test
+	public void testObtener() {
+		ClienteDaoImp dao= null;
         List<Cliente> lista = null;
         int total = 1;
 
@@ -33,10 +30,27 @@ public class ClienteDaoImplTest {
             fail(e.getMessage());
         }
 
-    }
-	
-//	@Test
-	public void testGuardarCliente() {
+	}
+
+	@Test
+	public void testObtenerCliente() {
+		ClienteDaoImp dao = null;
+		Cliente cliente = null;
+		
+		try {
+			dao = new ClienteDaoImp();
+			cliente = new Cliente();
+			cliente = dao.obtener("300");
+			
+			assertTrue(cliente != null);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+				
+	}
+
+	@Test
+	public void testGuardar() {
 		ClienteDaoImp dao= null;
         Cliente cliente = null;
         UsuarioDaoImp daoUsuario = null;
@@ -47,18 +61,18 @@ public class ClienteDaoImplTest {
             // Act
         	usuario = new Usuario();
         	daoUsuario = new UsuarioDaoImp();
-        	usuario = daoUsuario.obtener("elver");
+        	usuario = daoUsuario.obtener("juan");
             dao = new ClienteDaoImp();
             cliente = new Cliente();
-            cliente.setCedula("300");
-            cliente.setNombres("James");
-            cliente.setApellidos("Garzon Otalvaro");
+            cliente.setCedula("39180636");
+            cliente.setNombres("Cenelly");
+            cliente.setApellidos("Otalvaro");
             cliente.setEmail("jamesgarzon92@gmail.com");
             cliente.setUsuarioCrea(usuario);
             cliente.setFechaCreacion(new Date());
             dao.guardar(cliente);
             // Assert
-            clienteConsulta = dao.obtener("300");
+            clienteConsulta = dao.obtener("39180636");
             assertTrue(clienteConsulta != null);
         } catch (MyException e) {
             fail(e.getMessage());
@@ -66,9 +80,54 @@ public class ClienteDaoImplTest {
 
 	}
 
+//	@Test
+	public void testActualizar() throws MyException {
+		ClienteDaoImp dao= null;
+        Cliente cliente = null;
+        UsuarioDaoImp daoUsuario = null;
+        Usuario usuario = null;
+        
+        Cliente clienteConsulta = null;
+        try {
+            // Act
+        	usuario = new Usuario();
+        	daoUsuario = new UsuarioDaoImp();
+        	usuario = daoUsuario.obtener("juan");
+            dao = new ClienteDaoImp();
+            cliente = new Cliente();
+            cliente = dao.obtener("300");
+//            cliente.setCedula("300");
+            cliente.setNombres("James Danilo");
+//            cliente.setApellidos("Garzon Otalvaro");
+//            cliente.setEmail("jamesgarzon92@gmail.com");
+//            cliente.setUsuarioCrea(usuario);
+//            cliente.setFechaCreacion(new Date());
+            cliente.setUsuarioModifica(usuario);
+            dao.actualizar(cliente);
+            // Assert
+            clienteConsulta = dao.obtener("300");
+//            assertTrue(clienteConsulta.getNombres().equals("James Danilo"));
+            assertTrue(clienteConsulta.getUsuarioModifica().getLogin().equals("juan"));
+        } catch (MyException e) {
+           throw new MyException(e);
+        }
+
+	}
+
+//	@Test
+	public void testEliminar() throws MyException {
+		ClienteDaoImp dao= null;
+        Cliente cliente = null;   
+        Cliente clienteConsulta = null;
+        try {
+            // Act
+            dao = new ClienteDaoImp();
+            cliente = new Cliente();
+            cliente = dao.obtener("300");
+            dao.eliminar(cliente);
+        } catch (MyException e) {
+            throw new MyException(e);
+         }
+	}
+
 }
-	
-	
-	
-
-
