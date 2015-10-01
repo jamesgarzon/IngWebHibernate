@@ -11,7 +11,7 @@ import co.edu.udea.iw.dto.Usuario;
 import co.edu.udea.iw.exception.MyException;
 public class ClienteDaoImplTest {
 
-	@Test
+//	@Test
 	public void testObtener() {
 		ClienteDaoImp dao= null;
         List<Cliente> lista = null;
@@ -32,7 +32,7 @@ public class ClienteDaoImplTest {
 
 	}
 
-	@Test
+//	@Test
 	public void testObtenerCliente() {
 		ClienteDaoImp dao = null;
 		Cliente cliente = null;
@@ -49,7 +49,7 @@ public class ClienteDaoImplTest {
 				
 	}
 
-	@Test
+//	@Test
 	public void testGuardar() {
 		ClienteDaoImp dao= null;
         Cliente cliente = null;
@@ -64,15 +64,15 @@ public class ClienteDaoImplTest {
         	usuario = daoUsuario.obtener("juan");
             dao = new ClienteDaoImp();
             cliente = new Cliente();
-            cliente.setCedula("39180636");
-            cliente.setNombres("Cenelly");
-            cliente.setApellidos("Otalvaro");
+            cliente.setCedula("1040040896");
+            cliente.setNombres("James");
+            cliente.setApellidos("Garzon Otalvaro");
             cliente.setEmail("jamesgarzon92@gmail.com");
             cliente.setUsuarioCrea(usuario);
             cliente.setFechaCreacion(new Date());
             dao.guardar(cliente);
             // Assert
-            clienteConsulta = dao.obtener("39180636");
+            clienteConsulta = dao.obtener("1040040896");
             assertTrue(clienteConsulta != null);
         } catch (MyException e) {
             fail(e.getMessage());
@@ -80,7 +80,7 @@ public class ClienteDaoImplTest {
 
 	}
 
-//	@Test
+	@Test
 	public void testActualizar() throws MyException {
 		ClienteDaoImp dao= null;
         Cliente cliente = null;
@@ -95,18 +95,20 @@ public class ClienteDaoImplTest {
         	usuario = daoUsuario.obtener("juan");
             dao = new ClienteDaoImp();
             cliente = new Cliente();
-            cliente = dao.obtener("300");
+            cliente = dao.obtener("1040040896");
 //            cliente.setCedula("300");
             cliente.setNombres("James Danilo");
-//            cliente.setApellidos("Garzon Otalvaro");
-//            cliente.setEmail("jamesgarzon92@gmail.com");
-//            cliente.setUsuarioCrea(usuario);
-//            cliente.setFechaCreacion(new Date());
+            cliente.setApellidos("Garzon Otalvaro");
+            cliente.setEmail("jamesgarzon92@gmail.com");
+            cliente.setUsuarioCrea(usuario);
+            cliente.setFechaCreacion(new Date());
             cliente.setUsuarioModifica(usuario);
+            cliente.setFechaModificacion(new Date());
+            cliente.setUsuarioElimina(usuario);
+            cliente.setFechaEliminacion(new Date());
             dao.actualizar(cliente);
             // Assert
-            clienteConsulta = dao.obtener("300");
-//            assertTrue(clienteConsulta.getNombres().equals("James Danilo"));
+            clienteConsulta = dao.obtener("1040040896");
             assertTrue(clienteConsulta.getUsuarioModifica().getLogin().equals("juan"));
         } catch (MyException e) {
            throw new MyException(e);
