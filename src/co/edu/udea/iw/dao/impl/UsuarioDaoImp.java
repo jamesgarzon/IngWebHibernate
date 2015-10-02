@@ -23,7 +23,7 @@ public class UsuarioDaoImp implements UsuarioDao {
 		try {
 			session = HibernateSessionFactory.getInstance().getSession();
 			Criteria criteria = session.createCriteria(Usuario.class);
-			usuarios =criteria.list();
+			usuarios = criteria.list();
 		} catch (Exception e) {
 			throw new MyException(e);
 		}finally{
@@ -40,7 +40,7 @@ public class UsuarioDaoImp implements UsuarioDao {
 	}
 
 	@Override
-	public Usuario obtener(String login) throws MyException {
+	public Usuario obtenerUsuario(String login) throws MyException {
 		Usuario usuario = null;
 		Session session = null;
 		try {

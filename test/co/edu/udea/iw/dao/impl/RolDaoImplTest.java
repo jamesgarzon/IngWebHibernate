@@ -11,12 +11,12 @@ import co.edu.udea.iw.exception.MyException;
 
 public class RolDaoImplTest {
 
-//	 @Test
+	 @Test
 	    public void testObtenerRoles() {
 		 	RolDaoImp dao= null;
 	        List<Rol> lista = null;
 	        int total = 1;
-
+	        
 	        try {
 	            // Act
 	            dao = new RolDaoImp();
@@ -29,7 +29,7 @@ public class RolDaoImplTest {
 
 	    }
 
-//	@Test
+	@Test
 	public void testObtenerRol() {
 		RolDaoImp dao= null;
         Rol rol = null;
@@ -47,21 +47,22 @@ public class RolDaoImplTest {
 
 	}
 	
-//	@Test
+	@Test
 	public void testGuardarRol() {
 		RolDaoImp dao= null;
         Rol rol = null;
         Rol rolConsulta = null;
-        int codigoCiudad = 1;
+        String codigo = "AUX";
+        String nombre = "Auxiliar";
         try {
             // Act
             dao = new RolDaoImp();
             rol = new Rol();
-            rol.setCodigo("AUX");
-            rol.setNombre("Auxiliar");
+            rol.setCodigo(codigo);
+            rol.setNombre(nombre);
             dao.guardar(rol);
             // Assert
-            rolConsulta = dao.obtener("AUX");
+            rolConsulta = dao.obtener(codigo);
             assertTrue(rolConsulta != null);
         } catch (MyException e) {
             fail(e.getMessage());
@@ -69,26 +70,26 @@ public class RolDaoImplTest {
 
 	}
 	
-//	@Test
+	@Test
 	public void testActualizarCiudad() {
 		RolDaoImp dao= null;
         Rol rol = null;
         Rol rolConsulta = null;
-        int codigoRol = 1;
+        String codigo = "AUX";
+        String nombreNuevo = "AUXILIAR ADMINISTRATIVO";
         try {
             // Act
         	rol  = new Rol();
             dao = new RolDaoImp();
-            rol =dao.obtener("AUX");
-            rol.setNombre("AUXILIAR ADMINISTRATIVO");
+            rol =dao.obtener(codigo);
+            rol.setNombre(nombreNuevo);
             dao.actualizar(rol);
             // Assert
-            rolConsulta = dao.obtener("AUX");
-            assertTrue(rolConsulta.getNombre().equals("AUXILIAR ADMINISTRATIVO"));
+            rolConsulta = dao.obtener(codigo);
+            assertTrue(rolConsulta.getNombre().equals(nombreNuevo));
         } catch (MyException e) {
             fail(e.getMessage());
         }
-
 	}
 	
 	@Test
@@ -96,15 +97,15 @@ public class RolDaoImplTest {
 		RolDaoImp dao= null;
         Rol rol = null;
         Rol rolConsulta = null;
-        int codigoRol = 1;
+        String codigo="AUX";
         try {
             // Act
         	rol  = new Rol();
             dao = new RolDaoImp();
-            rol =dao.obtener("AUX");
+            rol =dao.obtener(codigo);
             dao.eliminar(rol);
             // Assert
-            rolConsulta = dao.obtener("AUX");
+            rolConsulta = dao.obtener(codigo);
             assertTrue(rolConsulta == null);
         } catch (MyException e) {
             fail(e.getMessage());

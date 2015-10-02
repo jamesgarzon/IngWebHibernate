@@ -11,7 +11,7 @@ import co.edu.udea.iw.dto.Usuario;
 import co.edu.udea.iw.exception.MyException;
 public class ClienteDaoImplTest {
 
-//	@Test
+	@Test
 	public void testObtener() {
 		ClienteDaoImp dao= null;
         List<Cliente> lista = null;
@@ -32,24 +32,25 @@ public class ClienteDaoImplTest {
 
 	}
 
-//	@Test
+	@Test
 	public void testObtenerCliente() {
 		ClienteDaoImp dao = null;
 		Cliente cliente = null;
-		
+		String cedula = "300";
 		try {
+			//Act
 			dao = new ClienteDaoImp();
 			cliente = new Cliente();
-			cliente = dao.obtener("300");
-			
+			cliente = dao.obtener(cedula);
+			//Assert
 			assertTrue(cliente != null);
 		} catch (Exception e) {
-			// TODO: handle exception
+			fail(e.getMessage());
 		}
 				
 	}
 
-//	@Test
+	@Test
 	public void testGuardar() {
 		ClienteDaoImp dao= null;
         Cliente cliente = null;
@@ -61,7 +62,7 @@ public class ClienteDaoImplTest {
             // Act
         	usuario = new Usuario();
         	daoUsuario = new UsuarioDaoImp();
-        	usuario = daoUsuario.obtener("juan");
+        	usuario = daoUsuario.obtenerUsuario("juan");
             dao = new ClienteDaoImp();
             cliente = new Cliente();
             cliente.setCedula("1040040896");
@@ -92,7 +93,7 @@ public class ClienteDaoImplTest {
             // Act
         	usuario = new Usuario();
         	daoUsuario = new UsuarioDaoImp();
-        	usuario = daoUsuario.obtener("juan");
+        	usuario = daoUsuario.obtenerUsuario("juan");
             dao = new ClienteDaoImp();
             cliente = new Cliente();
             cliente = dao.obtener("1040040896");
