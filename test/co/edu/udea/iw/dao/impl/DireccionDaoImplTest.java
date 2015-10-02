@@ -25,7 +25,7 @@ public class DireccionDaoImplTest {
             dao = new DireccionDaoImp();
             lista = dao.obtener();
             // Assert
-            System.out.println("Aqui se listan las direcciones existentes...");
+            System.out.println("Aqui se listan las direcciones existentes....");
             for(Direccion direccion :lista){
             	System.out.println("Nombre: "+ direccion.getDireccion());
             }

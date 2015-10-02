@@ -70,7 +70,6 @@ public class DireccionDaoImp implements DireccionDao {
 		}
 		return direccion;
 	}
-
 	@Override
 	public void guardar(Direccion Direccion) throws MyException {
 		Session session = null;
@@ -90,7 +89,6 @@ public class DireccionDaoImp implements DireccionDao {
 				}
 			}
 		}
-		
 	}
 
 	@Override
@@ -112,7 +110,6 @@ public class DireccionDaoImp implements DireccionDao {
 				}
 			}
 		}
-		
 	}
 
 	@Override
