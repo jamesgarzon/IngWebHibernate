@@ -64,7 +64,7 @@ public class UsuarioDaoImplTest {
 		String login = "James";
 		String nombres = "James Danilo";
 		String apellidos = "GarzÃ³n OtÃ¡lvaro";
-		String contraseña = "cualquiera";
+		String contrasena = "cualquiera";
 		try {
 			// Act
 			dao = new UsuarioDaoImp();
@@ -74,7 +74,7 @@ public class UsuarioDaoImplTest {
 			usuario.setLogin(login);
 			usuario.setNombres(nombres);
 			usuario.setApellidos(apellidos);
-			usuario.setContrasena(contraseña);
+			usuario.setContrasena(contrasena);
 			usuario.setRol(rol);
 			dao.guardar(usuario);
 			// Assert
@@ -96,7 +96,7 @@ public class UsuarioDaoImplTest {
 		String login = "James";
 		String nombresNuevo = "James";
 		String apellidosNuevo = "GarzÃ³n";
-		String contraseñaNueva = "xxxxxxx";
+		String contrasenaNueva = "xxxxxxx";
 		try {
 			// Act
 			dao = new UsuarioDaoImp();
@@ -105,7 +105,7 @@ public class UsuarioDaoImplTest {
 			usuario = dao.obtenerUsuario(login);
 			usuario.setNombres(nombresNuevo);
 			usuario.setApellidos(apellidosNuevo);
-			usuario.setContrasena(contraseñaNueva);
+			usuario.setContrasena(contrasenaNueva);
 			usuario.setRol(rol);
 			dao.actualizar(usuario);
 			// Assert
