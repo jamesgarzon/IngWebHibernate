@@ -22,9 +22,11 @@ public class ClienteDaoImp implements ClienteDao {
 		List<Cliente> clientes = new ArrayList<Cliente>();
 		Session session= null;
 		try {
+			
 			session = HibernateSessionFactory.getInstance().getSession();
 			Criteria criteria = session.createCriteria(Cliente.class);
 			clientes =criteria.list();
+			
 		} catch (Exception e) {
 			throw new MyException(e);
 		}finally{
