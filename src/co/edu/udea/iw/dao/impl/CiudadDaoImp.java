@@ -99,7 +99,7 @@ public class CiudadDaoImp implements CiudadDao {
 		}finally{
 			if (session!=null) {
 				try {
-					session.update(ciudad);
+					session.close();
 				} catch (HibernateException e) {
 					throw new MyException(e);
 				}
@@ -121,7 +121,7 @@ public class CiudadDaoImp implements CiudadDao {
 		}finally{
 			if (session!=null) {
 				try {
-					session.delete(ciudad);
+					session.close();
 				} catch (HibernateException e) {
 					throw new MyException(e);
 				}

@@ -4,16 +4,16 @@
 	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/home/james/workspace/IngWeb/lib/log4j-1.2.17.jar"/>
-	<classpathentry kind="lib" path="/home/james/workspace/IngWeb/lib/mysql-connector-java-5.1.22-bin.jar"/>
-	<classpathentry kind="lib" path="/home/james/workspace/IngWeb/lib/LibreriasHibernate/antlr-2.7.6.jar"/>
-	<classpathentry kind="lib" path="/home/james/workspace/IngWeb/lib/LibreriasHibernate/commons-collections-3.1.jar"/>
-	<classpathentry kind="lib" path="/home/james/workspace/IngWeb/lib/LibreriasHibernate/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="/home/james/workspace/IngWeb/lib/LibreriasHibernate/hibernate3.jar"/>
-	<classpathentry kind="lib" path="/home/james/workspace/IngWeb/lib/LibreriasHibernate/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
-	<classpathentry kind="lib" path="/home/james/workspace/IngWeb/lib/LibreriasHibernate/javassist-3.12.0.GA.jar"/>
-	<classpathentry kind="lib" path="/home/james/workspace/IngWeb/lib/LibreriasHibernate/jta-1.1.jar"/>
-	<classpathentry kind="lib" path="/home/james/workspace/IngWeb/lib/LibreriasHibernate/slf4j-api-1.6.1.jar"/>
-	<classpathentry kind="lib" path="/home/james/workspace/IngWeb/lib/LibreriasHibernate/slf4j-log4j12-1.7.2.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/james.garzon/Documentos/IngWeb/lib/LibreriasHibernate/antlr-2.7.6.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/james.garzon/Documentos/IngWeb/lib/LibreriasHibernate/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/james.garzon/Documentos/IngWeb/lib/LibreriasHibernate/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/james.garzon/Documentos/IngWeb/lib/LibreriasHibernate/hibernate3.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/james.garzon/Documentos/IngWeb/lib/LibreriasHibernate/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/james.garzon/Documentos/IngWeb/lib/LibreriasHibernate/javassist-3.12.0.GA.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/james.garzon/Documentos/IngWeb/lib/LibreriasHibernate/jta-1.1.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/james.garzon/Documentos/IngWeb/lib/LibreriasHibernate/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/james.garzon/Documentos/IngWeb/lib/LibreriasHibernate/slf4j-log4j12-1.7.2.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/james.garzon/Documentos/IngWeb/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="/export/estudiantes/james.garzon/Documentos/IngWeb/lib/mysql-connector-java-5.1.22-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

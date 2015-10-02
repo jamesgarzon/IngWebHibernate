@@ -25,7 +25,6 @@ import co.edu.udea.iw.exception.MyException;
  */
 public class DireccionDaoImp implements DireccionDao {
 
-
 	@Override
 	public List<Direccion> obtener() throws MyException {
 		List<Direccion> direcciones = new ArrayList<Direccion>();
@@ -45,7 +44,6 @@ public class DireccionDaoImp implements DireccionDao {
 				}
 			}
 		}
-		
 		return direcciones;
 	}
 
@@ -75,85 +73,69 @@ public class DireccionDaoImp implements DireccionDao {
 
 	@Override
 	public void guardar(Direccion Direccion) throws MyException {
-		// TODO Auto-generated method stub
+		Session session = null;
+		try {
+			session = HibernateSessionFactory.getInstance().getSession();
+			Transaction tx = session.beginTransaction();
+			session.save(Direccion);
+			tx.commit();
+		} catch (Exception e) {
+			throw new MyException(e);
+		}finally{
+			if (session!=null) {
+				try {
+					session.close();
+				} catch (HibernateException e) {
+					throw new MyException(e);
+				}
+			}
+		}
 		
 	}
 
 	@Override
 	public void actualizar(Direccion Direccion) throws MyException {
-		// TODO Auto-generated method stub
+		Session session = null;
+		try {
+			session = HibernateSessionFactory.getInstance().getSession();
+			Transaction tx = session.beginTransaction();
+			session.update(Direccion);
+			tx.commit();
+		} catch (Exception e) {
+			throw new MyException(e);
+		}finally{
+			if (session!=null) {
+				try {
+					session.close();
+				} catch (HibernateException e) {
+					throw new MyException(e);
+				}
+			}
+		}
 		
 	}
 
 	@Override
 	public void eliminar(Direccion Direccion) throws MyException {
-		// TODO Auto-generated method stub
+		Session session = null;
+		try {
+			session = HibernateSessionFactory.getInstance().getSession();
+			Transaction tx = session.beginTransaction();
+			session.delete(Direccion);
+			tx.commit();
+		} catch (Exception e) {
+			throw new MyException(e);
+		}finally{
+			if (session!=null) {
+				try {
+					session.close();
+				} catch (HibernateException e) {
+					throw new MyException(e);
+				}
+			}
+		}
 		
 	}
-
-//	@Override
-//	public void guardar(Cliente Cliente) throws MyException {
-//		Session session = null;
-//		try {
-//			session = HibernateSessionFactory.getInstance().getSession();
-//			Transaction tx = session.beginTransaction();
-//			session.save(Cliente);
-//			tx.commit();
-//		} catch (Exception e) {
-//			throw new MyException(e);
-//		}finally{
-//			if (session!=null) {
-//				try {
-//					session.close();
-//				} catch (HibernateException e) {
-//					throw new MyException(e);
-//				}
-//			}
-//		}
-//	}
-//
-//	@Override
-//	public void actualizar(Cliente Cliente) throws MyException {
-//		Session session = null;
-//		try {
-//			session = HibernateSessionFactory.getInstance().getSession();
-//			Transaction tx = session.beginTransaction();
-//			session.update(Cliente);
-//			tx.commit();
-//		} catch (Exception e) {
-//			throw new MyException(e);
-//		}finally{
-//			if (session!=null) {
-//				try {
-//					session.close();
-//				} catch (HibernateException e) {
-//					throw new MyException(e);
-//				}
-//			}
-//		}
-//
-//	}
-//
-//	@Override
-//	public void eliminar(Cliente Cliente) throws MyException {
-//		Session session = null;
-//		try {
-//			session = HibernateSessionFactory.getInstance().getSession();
-//			Transaction tx = session.beginTransaction();
-//			session.delete(Cliente);
-//			tx.commit();
-//		} catch (Exception e) {
-//			throw new MyException(e);
-//		}finally{
-//			if (session!=null) {
-//				try {
-//					session.close();
-//				} catch (HibernateException e) {
-//					throw new MyException(e);
-//				}
-//			}
-//		}
-//	}
 
 
 }
