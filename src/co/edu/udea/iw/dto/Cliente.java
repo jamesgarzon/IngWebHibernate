@@ -3,7 +3,7 @@ package co.edu.udea.iw.dto;
 import java.util.Date;
 
 public class Cliente {
-	// Hola BEBES.
+	
 	private String cedula;
 	private String nombres;
 	private String apellidos;
