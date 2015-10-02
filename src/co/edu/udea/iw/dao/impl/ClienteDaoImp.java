@@ -20,17 +20,15 @@ public class ClienteDaoImp implements ClienteDao {
 	@Override
 	public List<Cliente> obtener() throws MyException {
 		List<Cliente> clientes = new ArrayList<Cliente>();
-		Session session= null;
+		Session session = null;
 		try {
-			
 			session = HibernateSessionFactory.getInstance().getSession();
 			Criteria criteria = session.createCriteria(Cliente.class);
-			clientes =criteria.list();
-			
+			clientes = criteria.list();
 		} catch (Exception e) {
 			throw new MyException(e);
-		}finally{
-			if (session!=null) {
+		} finally {
+			if (session != null) {
 				try {
 					session.close();
 				} catch (HibernateException e) {
@@ -38,22 +36,26 @@ public class ClienteDaoImp implements ClienteDao {
 				}
 			}
 		}
-		
+
 		return clientes;
 	}
 
 	@Override
 	public Cliente obtener(String cedula) throws MyException {
 		Cliente rol = new Cliente();
-		Session session= null;
+		Session session = null;
 		try {
 			session = HibernateSessionFactory.getInstance().getSession();
 			Criteria criteria = session.createCriteria(Cliente.class).add(Restrictions.eq("Cedula", cedula));
-			rol = (Cliente) session.get(Cliente.class, cedula); //Si no encuentra el código, retorna un objeto nulo
+			rol = (Cliente) session.get(Cliente.class, cedula); // Si no
+																// encuentra el
+																// código,
+																// retorna un
+																// objeto nulo
 		} catch (Exception e) {
 			throw new MyException(e);
-		}finally{
-			if (session!=null) {
+		} finally {
+			if (session != null) {
 				try {
 					session.close();
 				} catch (HibernateException e) {
@@ -74,8 +76,8 @@ public class ClienteDaoImp implements ClienteDao {
 			tx.commit();
 		} catch (Exception e) {
 			throw new MyException(e);
-		}finally{
-			if (session!=null) {
+		} finally {
+			if (session != null) {
 				try {
 					session.close();
 				} catch (HibernateException e) {
@@ -95,8 +97,8 @@ public class ClienteDaoImp implements ClienteDao {
 			tx.commit();
 		} catch (Exception e) {
 			throw new MyException(e);
-		}finally{
-			if (session!=null) {
+		} finally {
+			if (session != null) {
 				try {
 					session.close();
 				} catch (HibernateException e) {
@@ -117,8 +119,8 @@ public class ClienteDaoImp implements ClienteDao {
 			tx.commit();
 		} catch (Exception e) {
 			throw new MyException(e);
-		}finally{
-			if (session!=null) {
+		} finally {
+			if (session != null) {
 				try {
 					session.close();
 				} catch (HibernateException e) {
