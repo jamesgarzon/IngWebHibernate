@@ -7,7 +7,7 @@ import co.edu.udea.iw.exception.MyException;
 
 public interface UsuarioDao {
 	List<Usuario> obtener() throws MyException;
-	Usuario obtener(String codigo) throws MyException;
+	Usuario obtenerUsuario(String codigo) throws MyException;
 	void guardar(Usuario Usuario) throws MyException;
 	void actualizar(Usuario Usuario) throws MyException;
 	void eliminar(Usuario Usuario) throws MyException;
