@@ -7,17 +7,20 @@ import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import co.edu.udea.iw.dao.HibernateSessionFactory;
 import co.edu.udea.iw.dto.Rol;
 import co.edu.udea.iw.dto.Usuario;
 import co.edu.udea.iw.exception.MyException;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class UsuarioDaoImplTest {
 
 	@Test
-	public void testObtener() {
+	public void test1Obtener() {
 		UsuarioDaoImp dao = null;
 		List<Usuario> lista = null;
 		int total = 1;
@@ -37,7 +40,7 @@ public class UsuarioDaoImplTest {
 	}
 
 	@Test
-	public void testObtenerUsuario() {
+	public void test2ObtenerUsuario() {
 		UsuarioDaoImp dao = null;
 		Usuario usuario = null;
 		String loginUsuario = "juan";
@@ -54,7 +57,7 @@ public class UsuarioDaoImplTest {
 	}
 
 	@Test
-	public void testGuardar() {
+	public void test3Guardar() {
 		UsuarioDaoImp dao = null;
 		Usuario usuario = null;
 		Usuario usuarioConsulta = null;
@@ -86,7 +89,7 @@ public class UsuarioDaoImplTest {
 	}
 
 	@Test
-	public void testActualizar() {
+	public void test4Actualizar() {
 		UsuarioDaoImp dao = null;
 		Usuario usuario = null;
 		Usuario usuarioConsulta = null;
@@ -117,7 +120,7 @@ public class UsuarioDaoImplTest {
 	}
 
 	@Test
-	public void testEliminar() {
+	public void test5Eliminar() {
 		UsuarioDaoImp dao = null;
 		Usuario usuario = null;
 		Usuario usuarioConsulta = null;

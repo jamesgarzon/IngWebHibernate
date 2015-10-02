@@ -4,7 +4,9 @@ import static org.junit.Assert.*;
 
 import java.util.List;
 
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import co.edu.udea.iw.dto.Ciudad;
 import co.edu.udea.iw.dto.Cliente;
@@ -12,10 +14,11 @@ import co.edu.udea.iw.dto.Direccion;
 import co.edu.udea.iw.dto.DireccionId;
 import co.edu.udea.iw.exception.MyException;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DireccionDaoImplTest {
 
-//	@Test
-	public void testObtener() {
+	@Test
+	public void test1Obtener() {
 		DireccionDaoImp dao= null;
         List<Direccion> lista = null;
         int total = 1;
@@ -37,7 +40,7 @@ public class DireccionDaoImplTest {
 	}
 
 //	@Test
-	public void testObtenerDireccionId() {
+	public void test2ObtenerDireccionId() {
 		DireccionDaoImp dao = null;
 		Direccion direccion = null;
 		DireccionId direccionId = null;
@@ -62,7 +65,7 @@ public class DireccionDaoImplTest {
 	}
 
 //	@Test
-	public void testGuardar() throws MyException {
+	public void test3Guardar() throws MyException {
 		DireccionDaoImp dao = null;
 		Direccion direccion = null;
 		Direccion direccionConsulta = null;
@@ -119,7 +122,7 @@ public class DireccionDaoImplTest {
 	}
 
 //	@Test
-	public void testActualizar() {
+	public void test4Actualizar() {
 		DireccionDaoImp dao = null;
 		Direccion direccion = null;
 		Direccion direccionConsulta = null;
@@ -181,7 +184,7 @@ public class DireccionDaoImplTest {
 	}
 
 	@Test
-	public void testEliminar() {
+	public void test5Eliminar() {
 		DireccionDaoImp dao = null;
 		Direccion direccion = null;
 		Direccion direccionConsulta = null;

@@ -4,15 +4,18 @@ import static org.junit.Assert.*;
 
 import java.util.List;
 
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import co.edu.udea.iw.dto.Rol;
 import co.edu.udea.iw.exception.MyException;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class RolDaoImplTest {
 
 	 @Test
-	    public void testObtenerRoles() {
+	    public void test1ObtenerRoles() {
 		 	RolDaoImp dao= null;
 	        List<Rol> lista = null;
 	        int total = 1;
@@ -30,7 +33,7 @@ public class RolDaoImplTest {
 	    }
 
 	@Test
-	public void testObtenerRol() {
+	public void test2ObtenerRol() {
 		RolDaoImp dao= null;
         Rol rol = null;
         String codigoCiudad = "AUD";
@@ -48,7 +51,7 @@ public class RolDaoImplTest {
 	}
 	
 	@Test
-	public void testGuardarRol() {
+	public void test3GuardarRol() {
 		RolDaoImp dao= null;
         Rol rol = null;
         Rol rolConsulta = null;
@@ -71,7 +74,7 @@ public class RolDaoImplTest {
 	}
 	
 	@Test
-	public void testActualizarCiudad() {
+	public void test4ActualizarCiudad() {
 		RolDaoImp dao= null;
         Rol rol = null;
         Rol rolConsulta = null;
@@ -93,7 +96,7 @@ public class RolDaoImplTest {
 	}
 	
 	@Test
-	public void testEliminarRol() {
+	public void test5EliminarRol() {
 		RolDaoImp dao= null;
         Rol rol = null;
         Rol rolConsulta = null;

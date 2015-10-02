@@ -5,14 +5,19 @@ import static org.junit.Assert.*;
 import java.util.Date;
 import java.util.List;
 
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
+
 import co.edu.udea.iw.dto.Cliente;
 import co.edu.udea.iw.dto.Usuario;
 import co.edu.udea.iw.exception.MyException;
+
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ClienteDaoImplTest {
 
 	@Test
-	public void testObtener() {
+	public void test1Obtener() {
 		ClienteDaoImp dao= null;
         List<Cliente> lista = null;
         int total = 1;
@@ -33,7 +38,7 @@ public class ClienteDaoImplTest {
 	}
 
 	@Test
-	public void testObtenerCliente() {
+	public void test2ObtenerCliente() {
 		ClienteDaoImp dao = null;
 		Cliente cliente = null;
 		String cedula = "300";
@@ -51,7 +56,7 @@ public class ClienteDaoImplTest {
 	}
 
 	@Test
-	public void testGuardar() {
+	public void test3Guardar() {
 		ClienteDaoImp dao= null;
         Cliente cliente = null;
         UsuarioDaoImp daoUsuario = null;
@@ -89,7 +94,7 @@ public class ClienteDaoImplTest {
 	}
 
 	@Test
-	public void testActualizar() throws MyException {
+	public void test4Actualizar() throws MyException {
 		ClienteDaoImp dao= null;
         Cliente cliente = null;
         UsuarioDaoImp daoUsuario = null;
@@ -131,7 +136,7 @@ public class ClienteDaoImplTest {
 	}
 
 	@Test
-	public void testEliminar() throws MyException {
+	public void test5Eliminar() throws MyException {
 		ClienteDaoImp dao= null;
         Cliente cliente = null;   
         String cedula = "300";
