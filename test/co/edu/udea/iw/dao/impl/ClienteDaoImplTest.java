@@ -107,6 +107,7 @@ public class ClienteDaoImplTest {
         String nombresNuevo = "James Danilo";
         String apellidos = "Garzon Otalvaro";
         String email = "jamesgarzon92@gmail.com";
+        
         try {
             // Act
         	usuario = new Usuario();
@@ -139,7 +140,7 @@ public class ClienteDaoImplTest {
 	public void test5Eliminar() throws MyException {
 		ClienteDaoImp dao= null;
         Cliente cliente = null;   
-        String cedula = "300";
+        String cedula = "1040040896";
         try {
             // Act
             dao = new ClienteDaoImp();
