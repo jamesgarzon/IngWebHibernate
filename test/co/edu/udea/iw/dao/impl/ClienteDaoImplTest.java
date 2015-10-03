@@ -3,6 +3,7 @@ package co.edu.udea.iw.dao.impl;
 import static org.junit.Assert.*;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 
 import org.junit.FixMethodOrder;
@@ -10,6 +11,8 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 import co.edu.udea.iw.dto.Cliente;
+import co.edu.udea.iw.dto.Direccion;
+import co.edu.udea.iw.dto.DireccionId;
 import co.edu.udea.iw.dto.Usuario;
 import co.edu.udea.iw.exception.MyException;
 
@@ -38,10 +41,10 @@ public class ClienteDaoImplTest {
 	}
 
 	@Test
-	public void test2ObtenerCliente() {
+	public void test4ObtenerCliente() {
 		ClienteDaoImp dao = null;
 		Cliente cliente = null;
-		String cedula = "300";
+		String cedula = "123456";
 		try {
 			//Act
 			dao = new ClienteDaoImp();
@@ -56,12 +59,11 @@ public class ClienteDaoImplTest {
 	}
 
 	@Test
-	public void test3Guardar() {
+	public void test2Guardar() {
 		ClienteDaoImp dao= null;
         Cliente cliente = null;
         UsuarioDaoImp daoUsuario = null;
         Usuario usuario = null;
-        
         Cliente clienteConsulta = null;
         
         String login = "juan";
@@ -69,12 +71,15 @@ public class ClienteDaoImplTest {
         String nombres = "James";
         String apellidos = "Garzon Otalvaro";
         String email = "jamesgarzon92@gmail.com";
-        
+
+
         try {
             // Act
         	usuario = new Usuario();
         	daoUsuario = new UsuarioDaoImp();
         	usuario = daoUsuario.obtenerUsuario(login);
+        	
+        	
             dao = new ClienteDaoImp();
             cliente = new Cliente();
             cliente.setCedula(cedula);
@@ -94,7 +99,7 @@ public class ClienteDaoImplTest {
 	}
 
 	@Test
-	public void test4Actualizar() throws MyException {
+	public void test3Actualizar() throws MyException {
 		ClienteDaoImp dao= null;
         Cliente cliente = null;
         UsuarioDaoImp daoUsuario = null;
@@ -140,15 +145,16 @@ public class ClienteDaoImplTest {
 	public void test5Eliminar() throws MyException {
 		ClienteDaoImp dao= null;
         Cliente cliente = null;   
-        String cedula = "1040040896";
+        String cedula = "123456";
         try {
             // Act
             dao = new ClienteDaoImp();
-            cliente = new Cliente();
             cliente = dao.obtener(cedula);
+            System.out.println("Cliente: "+cliente.getNombres() );
             dao.eliminar(cliente);
         } catch (MyException e) {
-            throw new MyException(e);
+        	e.printStackTrace();
+//            throw new MyException(e);
          }
 	}
 
